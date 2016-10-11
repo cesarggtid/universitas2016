@@ -1,4 +1,4 @@
-# Databricks notebook source exported at Tue, 11 Oct 2016 01:55:12 UTC
+# Databricks notebook source exported at Tue, 11 Oct 2016 06:42:40 UTC
 # MAGIC %md
 # MAGIC 
 # MAGIC # Artificial Intelligence
@@ -10,6 +10,10 @@
 # MAGIC ** Artificial Intelligence (AI) ** is intelligence exhibited by machines (https://en.wikipedia.org/wiki/Artificial_intelligence)
 # MAGIC 
 # MAGIC **Machine Learning** is an area of **Artificial Intelligence** concerned with the development of techniques that allow computers to learn. Learning is the ability of the machine to improve its performance based on previous results. (http://www.igi-global.com/dictionary/machine-learning/17656)
+# MAGIC 
+# MAGIC ** References: **
+# MAGIC + Caret package official site: http://topepo.github.io/caret/index.html
+# MAGIC + Machine Learning Mastering: http://machinelearningmastery.com/
 
 # COMMAND ----------
 
@@ -77,16 +81,17 @@ str(iris)
 # MAGIC 
 # MAGIC ## Machine Learning
 # MAGIC * ### Unsupervised
-# MAGIC   + ** Clustering **
-# MAGIC   + Association Rules
-# MAGIC   + Sequential Patterns
+# MAGIC   + ** Clustering ** (kmeans, hclust https://stat.ethz.ch/R-manual/R-devel/library/stats/html/hclust.html)
+# MAGIC   + Association Rules (https://cran.r-project.org/web/packages/arules/index.html)
+# MAGIC   + Sequential Patterns (https://cran.r-project.org/web/packages/TraMineR/index.html)
 # MAGIC   + PCA Principal Components Analysis
 # MAGIC * ### Supervised
 # MAGIC   + ** Prediction: Linear Regression **
-# MAGIC   + Prediction: Non Linear Regression
+# MAGIC   + Prediction: Non Linear Regression (SVM, MARSS)
 # MAGIC   + Prediction: Regression with Trees
 # MAGIC   + ** Classification: Logistic Regression (binary) **
 # MAGIC   + ** Classification: Trees (multiclass) **
+# MAGIC   + Classification: Non Lineal (SVM, KNN, Naive Bayes, Neural Networks)
 
 # COMMAND ----------
 
@@ -364,7 +369,7 @@ confusionMatrix(glmnet.caret.model.predict, y.test.admissions)
 
 # Evaluation using the ROC curve
 library(pROC)
-roc(as.numeric(glmnet.caret.model.predict), as.numeric(y.test.admissions), percent=TRUE, plot=TRUE)
+roc(as.numeric(glmnet.caret.model.predict), as.numeric(y.test.admissions), percent=TRUE, plot=FALSE)
 
 
 # COMMAND ----------
