@@ -438,7 +438,7 @@ confusionMatrix(gbm.caret.model.predict, y.test.admissions)
 # Evaluation using the ROC curve
 library(pROC)
 
-roc(as.numeric(gbm.caret.model.predict), as.numeric(y.test.addmissions), percent=TRUE, plot=FALSE)
+roc(as.numeric(gbm.caret.model.predict), as.numeric(y.test.admissions), percent=TRUE, plot=FALSE)
 
 # COMMAND ----------
 
